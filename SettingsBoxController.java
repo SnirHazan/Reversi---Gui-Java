@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -21,7 +22,7 @@ public class SettingsBoxController implements Initializable{
 	@FXML
 	public ChoiceBox<String> beginning = new ChoiceBox<>();
 	@FXML
-	public ChoiceBox<String> SizeBoard = new ChoiceBox<>();
+	public ComboBox<String> SizeBoard = new ComboBox<>();
 	@FXML
 	public ColorPicker player1Color = new ColorPicker();
 	@FXML
@@ -68,6 +69,7 @@ public class SettingsBoxController implements Initializable{
 			SizeBoard.getItems().add(String.valueOf(i));
 		}
 		SizeBoard.setValue("8");
+		SizeBoard.setVisibleRowCount(5);
 		
 		player1Color.setValue(Color.BLACK);
 
