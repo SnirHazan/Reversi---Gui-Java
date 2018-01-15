@@ -1,0 +1,4 @@
+start_player;null
+color_player1;0x4d1a4dff
+color_player2;0x669999ff
+board_size;null
