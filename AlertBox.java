@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -20,14 +21,18 @@ public class AlertBox {
 		
 		Label l = new Label();
 		l.setText(message);
-		Button exit = new Button("close it");
-		exit.setOnAction(e -> win.close());
+		l.setFont(new Font(20.0));
+		Button exit = new Button("Exit");
+		exit.setOnAction(e -> {
+			win.close();
+			
+		});
 		
 		VBox lay = new VBox(10);
 		lay.getChildren().addAll(exit,l);
 		lay.setAlignment(Pos.CENTER);
 		
-		Scene scene = new Scene(lay,400,400);
+		Scene scene = new Scene(lay,200,200);
 		win.setScene(scene);
 		
 		win.showAndWait();

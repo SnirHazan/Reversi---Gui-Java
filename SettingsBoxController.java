@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class SettingsBoxController implements Initializable{
@@ -61,11 +62,14 @@ public class SettingsBoxController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		beginning.getItems().addAll("player1","player2");
+		beginning.setValue("player1");
 
 		for(int i = minBoardSize ; i <= maxBoardSize ; i+=2) {
 			SizeBoard.getItems().add(String.valueOf(i));
 		}
-
+		SizeBoard.setValue("8");
+		
+		player1Color.setValue(Color.BLACK);
 
 	}
 }
