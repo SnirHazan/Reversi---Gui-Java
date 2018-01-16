@@ -40,6 +40,7 @@ public class SettingsBoxController implements Initializable{
 	}
 
 	private void WriteConfigToFile() {
+		
 		ClassLoader loader = this.getClass().getClassLoader();
 		PrintWriter writer = null;
 
