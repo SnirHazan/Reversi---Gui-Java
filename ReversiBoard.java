@@ -11,13 +11,20 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-
+/**
+ * class of ReversiBoard extenf GridPane 
+ * @author Oren
+ * this is the javafx board
+ */
 public class ReversiBoard extends GridPane {
 	private GameLogic gl;
 	private static final char PLAYER_1 = 'X';
 	private static final char PLAYER_2 = 'O';
 	private ReversiGameController rgc;
-
+/**
+ * constructor of ReversiBoard.
+ * @param rgc - ReversiGameController is an object of the controller of Reversi Game
+ */
 	public ReversiBoard(ReversiGameController rgc) {
 		this.gl = new GameLogic();
 		this.rgc = rgc;
@@ -30,36 +37,37 @@ public class ReversiBoard extends GridPane {
 		} catch (IOException exception) {
 			throw new RuntimeException(exception);
 		}
-
-
 	}
-
-
+/**
+ * draw this GridPane (Board)
+ */
 	public void draw() {
 		boolean noMoveFlag = false;
 		boolean endGameFlag = false;
 		ArrayList<Point> start_points = new ArrayList<Point>();
 		ArrayList<Point> end_points = new ArrayList<Point>();
 
+		//finds the cuurent player options
 		gl.find_options(rgc.getCurrentPlayerSymbol(),start_points,end_points);
-
+// if has options draw this board and his options
+//else:
 		if(start_points.isEmpty()){
 			rgc.switchPlayer();
 			start_points.clear();
 			end_points.clear();
-
+			//raise this flag - meaning this player cannot move
 			noMoveFlag =true;
-
-
+			//search for other player options - if has option - draw , else end of game
 			gl.find_options(rgc.getCurrentPlayerSymbol(),start_points,end_points);
 			if(start_points.isEmpty()){
+				//2 players not have a move- end of game
 				endGameFlag = true;
 			}
-
-		} else {
+		} else { 
+			//before drawing - clear board
 			this.getChildren().clear();
 		}
-
+//set points to Game controller
 		this.rgc.getxPoints().setText(String.valueOf(gl.getBoard().player_points('X')));
 		this.rgc.getoPoints().setText(String.valueOf(gl.getBoard().player_points('O')));
 
@@ -68,7 +76,7 @@ public class ReversiBoard extends GridPane {
 		double size = gl.getBoard().getSize();
 		double cellHeight = (double)height /(double) size;
 		double cellWidth = (double)width / (double) size;
-
+//run all matrix and for each cell create a rectangle - if needed circle add it later
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
 
@@ -82,41 +90,23 @@ public class ReversiBoard extends GridPane {
 					this.addDisk(j , i , cellHeight, start_points, end_points, gl.get_player(2).getColor());
 				} else  {
 					this.add(rect, j, i);
-
-					rect.setOnMouseClicked(event ->{
-						int row = GridPane.getRowIndex(rect);
-						int col = GridPane.getColumnIndex(rect);
-						String s = this.rgc.getCurrentPlayer().getText();
-
-						if(s.equals(gl.get_player(1).getName())){
-							if(gl.play_one_turn(gl.get_player(1).getSymbol(),start_points,end_points, row, col) != -1) {
-								rgc.getCurrentPlayer().setText(gl.get_player(2).getName());
-								this.draw();
-							}
-						} else {
-							if(gl.play_one_turn(gl.get_player(2).getSymbol(),start_points,end_points, row, col) != -1) {
-								rgc.getCurrentPlayer().setText(gl.get_player(1).getName());
-								this.draw();
-							}
-						}
-					});
-
 				}
 			}
-
 		}
-
+		//add option to board
 		for (Point point : start_points) {
 			this.addDisk(point.getY(), point.getX(), cellHeight, start_points, end_points, Color.TRANSPARENT);
 		}
-
+		//if end of game - alert box
 		if(gl.board_full() || endGameFlag){
 			endOfGame();
-		} else if(noMoveFlag==true){
+		} else if(noMoveFlag==true){ // if just 1 player not have move
 			AlertBox.Display("Reversi", "No available move!");
 		}
 	}
-
+/**
+ * prints message to screen - winning player is.
+ */
 	private void endOfGame(){
 		int player1Point = Integer.parseInt(this.rgc.getxPoints().getText());
 		int player2Point = Integer.parseInt(this.rgc.getoPoints().getText());
@@ -131,6 +121,16 @@ public class ReversiBoard extends GridPane {
 		window.close();
 
 	}
+	/**
+	 * add 3D disk to grid, and add a listener for circles 
+	 * the listener is activate in mouse click - and play 1 turn.
+	 * @param j - int col of grid
+	 * @param i - int row of grid
+	 * @param cellHeight -int size of cell in grid
+	 * @param start_points - ArrayList<Points> start points for play 1 turn
+	 * @param end_points -  ArrayList<Points> end points for play 1 turn
+	 * @param playerColor - Color color of circle
+	 */
 	private void addDisk(int j, int i, double cellHeight ,ArrayList<Point> start_points,ArrayList<Point> end_points,Color playerColor){
 		Circle down_circle;
 		if(playerColor.toString().equals("0x000000ff")){
@@ -168,7 +168,6 @@ public class ReversiBoard extends GridPane {
 			}
 		});
 	}
-
 
 }
 
