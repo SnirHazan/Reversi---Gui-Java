@@ -3,11 +3,11 @@ package myapp;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-
 import javafx.scene.layout.VBox;
 import javafx.fxml.FXMLLoader;
-
-
+/**
+ * Main class.
+ */
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {

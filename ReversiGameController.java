@@ -1,24 +1,16 @@
 package myapp;
 
-
-
-
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.fxml.*;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
-
+/**
+ * Class of ReversiGameController.
+ */
 public class ReversiGameController implements Initializable {
-	//private int counter = 1;
 	@FXML
 	private VBox root;
 	@FXML
@@ -27,17 +19,12 @@ public class ReversiGameController implements Initializable {
 	private Label currentPlayer = new Label();
 	@FXML
 	private Label xPoints = new Label("2");
-
 	@FXML
 	private Label oPoints = new Label("2");
 	@FXML
 	private Button btn = new Button();
 	@FXML
 	private ReversiBoard reversiBoard;
-	@FXML
-	public Button getBtn() {
-		return btn;
-	}
 	@FXML
 	private MenuBar bar = new MenuBar();
 	@FXML
@@ -49,9 +36,6 @@ public class ReversiGameController implements Initializable {
 
 	private SettingBox set = new SettingBox();
 
-
-
-	//private ReversiBoard reversiBoard;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		reversiBoard = new ReversiBoard(this);
@@ -59,8 +43,6 @@ public class ReversiGameController implements Initializable {
 		reversiBoard.setPrefWidth(400);
 		reversiBoard.setPrefHeight(400);
 		son.getChildren().add(0,reversiBoard);
-		//root.getChildren().add(son);
-		//reversiBoard.draw();
 
 		root.widthProperty().addListener((observable, oldValue, newValue) -> {
 			double boardNewWidth = newValue.doubleValue() - 200;
@@ -72,8 +54,6 @@ public class ReversiGameController implements Initializable {
 			reversiBoard.setPrefHeight(newValue.doubleValue());
 			reversiBoard.draw();
 		});
-
-
 		exit.setOnAction(event -> {
 
 			String ans = ConfirmBox.Display("Exit", "Are you sure?");
@@ -89,34 +69,37 @@ public class ReversiGameController implements Initializable {
 
 			}
 		});
-
 	}
-
+	/** 
+	 * @return xPoints - int the point of the first player.
+	 */
 	public Label getxPoints() {
 		return xPoints;
 	}
-
-
-
+	/** 
+	 * @return oPoints - int the point of the second player.
+	 */
 	public Label getoPoints() {
 		return oPoints;
 	}
-
-
-
+	/**
+	 * @return Label - currentPlayer Label.
+	 */
 	public Label getCurrentPlayer() {
 		return currentPlayer;
 	}
-	
+	/**
+	 * @return Char - currentPlayer symbol.
+	 */
 	public char getCurrentPlayerSymbol(){
 		if(this.getCurrentPlayer().getText().equals("player1")){
 			return 'X';
 		}
 		return 'O';
 	}
-
-
-
+	/**
+	 * This function switch current player.
+	 */
 	public void switchPlayer(){
 		if(this.getCurrentPlayerSymbol() == 'X'){
 			this.currentPlayer.setText("player2");
@@ -124,5 +107,4 @@ public class ReversiGameController implements Initializable {
 			this.currentPlayer.setText("player1");
 		}
 	}
-
 }
