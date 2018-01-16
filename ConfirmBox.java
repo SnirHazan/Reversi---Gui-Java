@@ -7,13 +7,19 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+/**
+ * Class of ConfirmBox.
+ */
 public class ConfirmBox {
 
 	static String answer;
 	Button yes;
 	Button no;
-
+/**
+ * @param title - the title of the window.
+ * @param message - the question we ask the user.
+ * @return answer - the answer of the user.
+ */
 	static String Display(String title, String message){
 
 		Stage win = new Stage();
@@ -51,7 +57,5 @@ public class ConfirmBox {
 
 		return answer;
 
-
 	}
-
 }

@@ -15,7 +15,9 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.ComboBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
+/**
+ * Class of SettingsBoxController.
+ */
 public class SettingsBoxController implements Initializable{
 	@FXML
 	public Button Apply = new Button();
@@ -30,7 +32,10 @@ public class SettingsBoxController implements Initializable{
 
 	private final int minBoardSize = 4;
 	private final int maxBoardSize = 20;
-
+/**
+ * This function that called by a click on apply button.
+ * call to WriteConfigToFile function ad close the settings window.
+ */
 	public void ApplyClick() {
 
 		WriteConfigToFile();
@@ -38,7 +43,10 @@ public class SettingsBoxController implements Initializable{
 		stage.close();
 
 	}
-
+/**
+ * This function write a new configuration
+ * file according to the user choices.
+ */
 	private void WriteConfigToFile() {
 		
 		PrintWriter writer = null;

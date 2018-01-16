@@ -9,8 +9,18 @@ import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * Class of AlertBox.
+ *
+ */
 public class AlertBox {
 	
+	/**
+	 * This function display the AlertBox.
+	 * @param title - the title of the window.
+	 * @param message - the message to the user.
+	 */
 	static void Display(String title, String message){
 		
 		Stage win = new Stage();
