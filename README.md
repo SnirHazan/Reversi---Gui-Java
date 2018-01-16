@@ -1,1 +1,0 @@
-# Reversi---Gui-Java

@@ -18,49 +18,56 @@ public class GameLogic {
 	public GameLogic(){
 		this.should_stop = false;
 		this.players[0] = new Player("player1", 'X');
-		players[0].setColor(Color.BLACK);
+		
 		this.players[1] = new Player("player2", 'O');
-		players[1].setColor(Color.WHITE);
-		this.board =new Board(8);
+		
+		
 
-		this.firstPlayer = "player1";
-//		readFromFile();
+		
+		readFromFile();
 		this.init_start_board();
 	}
 
 	private void readFromFile(){
-		BufferedReader reader = null;
-		String path = getClass().getClassLoader().getResource("").getPath();
-		try {
-			reader = new BufferedReader(
-					new InputStreamReader(
-							new FileInputStream(new File(path + "\\myapp\\define.txt"))));
+		File f = new File("settings.txt");
+		if(f.exists()) {
 
-			// read all lines into the buffer
-			String line = reader.readLine();
-			while (line != null) {
-				StringBuilder contentBuffer = new StringBuilder();
-				contentBuffer.append(line.trim());
-				String[] parts = contentBuffer.toString().split(";");
-				String s1 = parts[0];
-				String s2 = parts[1];
+			try {
+				BufferedReader reader = new BufferedReader(new FileReader(f.getAbsolutePath()));
 
-				if(s1.equals("start_player")) {
-					firstPlayer = s2;
-				} else if(s1.equals("color_player1")) {
-					players[0].setColor(Color.web(s2));
-				} else if(s1.equals("color_player2")) {
-					players[1].setColor(Color.web(s2));
-				} else if(s1.equals("board_size")) {
-					this.board = new Board(Integer.parseInt(s2));
+				// read all lines into the buffer
+				String line = reader.readLine();
+				while (line != null) {
+					StringBuilder contentBuffer = new StringBuilder();
+					contentBuffer.append(line.trim());
+					String[] parts = contentBuffer.toString().split(";");
+					String s1 = parts[0];
+					String s2 = parts[1];
+
+					if(s1.equals("start_player")) {
+						firstPlayer = s2;
+					} else if(s1.equals("color_player1")) {
+						players[0].setColor(Color.web(s2));
+					} else if(s1.equals("color_player2")) {
+						players[1].setColor(Color.web(s2));
+					} else if(s1.equals("board_size")) {
+						this.board = new Board(Integer.parseInt(s2));
+					}
+
+					line = reader.readLine();
 				}
-
-				line = reader.readLine();
+				reader.close();
+			} catch (Exception e) {
+				System.out.println("not found");
 			}
-		} catch (IOException e) {
-			System.out.println("not found");
-			e.printStackTrace();
+
+		} else { 
+			players[0].setColor(Color.BLACK);
+			players[1].setColor(Color.WHITE);
+			this.board =new Board(8);
+			this.firstPlayer = "player1";
 		}
+
 
 	}
 	private void init_start_board() {
@@ -69,7 +76,7 @@ public class GameLogic {
 		this.board.set_matrix(this.board.getSize()/2,this.board.getSize()/2,'O');
 		this.board.set_matrix(this.board.getSize()/2,this.board.getSize()/2 - 1,'X');
 		this.board.set_matrix(this.board.getSize()/2 - 1,this.board.getSize()/2,'X');
-		
+
 	}
 
 	public boolean is_should_stop(){
@@ -83,11 +90,11 @@ public class GameLogic {
 	public void print_board(){
 		this.board.print_matrix();
 	}
-	
+
 	public Player get_player(int i) {
 		return players[i-1];
 	}
-	 
+
 	public Board getBoard(){
 		return this.board;
 	}
@@ -159,7 +166,7 @@ public class GameLogic {
 
 			}
 		}
-		
+
 	}
 	private Point check_right(int row, int col, char symbol) {
 		int i = row;

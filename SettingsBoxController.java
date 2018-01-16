@@ -41,13 +41,12 @@ public class SettingsBoxController implements Initializable{
 
 	private void WriteConfigToFile() {
 		
-		ClassLoader loader = this.getClass().getClassLoader();
 		PrintWriter writer = null;
 
 		try{
 			writer = new PrintWriter(
 					new OutputStreamWriter(
-							new FileOutputStream(new File(loader.getResource("").getPath() + "\\myapp\\define.txt"))));
+							new FileOutputStream(new File("settings.txt"))));
 
 		} catch (Exception e) {
 			e.printStackTrace();

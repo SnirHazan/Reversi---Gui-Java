@@ -131,7 +131,6 @@ public class ReversiBoard extends GridPane {
 		window.close();
 
 	}
-
 	private void addDisk(int j, int i, double cellHeight ,ArrayList<Point> start_points,ArrayList<Point> end_points,Color playerColor){
 		Circle down_circle;
 		if(playerColor.toString().equals("0x000000ff")){
