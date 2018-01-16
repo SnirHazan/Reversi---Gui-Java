@@ -70,8 +70,8 @@ public class SettingsBoxController implements Initializable{
 		}
 		SizeBoard.setValue("8");
 		SizeBoard.setVisibleRowCount(5);
-		
 		player1Color.setValue(Color.BLACK);
+		
 
 	}
 }

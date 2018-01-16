@@ -23,6 +23,9 @@ public class AlertBox {
 		l.setText(message);
 		l.setFont(new Font(20.0));
 		Button exit = new Button("Exit");
+		win.setOnCloseRequest(e ->{
+			win.close();
+		});
 		exit.setOnAction(e -> {
 			win.close();
 			

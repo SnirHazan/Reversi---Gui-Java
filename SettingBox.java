@@ -9,6 +9,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class SettingBox {
+	SettingsBoxController sbc = new SettingsBoxController();
 	
 	public void Display(String title) throws IOException{
 		

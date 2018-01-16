@@ -34,20 +34,20 @@ public class ReversiGameController implements Initializable {
 	private Button btn = new Button();
 	@FXML
 	private ReversiBoard reversiBoard;
-@FXML
+	@FXML
 	public Button getBtn() {
 		return btn;
 	}
-@FXML
+	@FXML
 	private MenuBar bar = new MenuBar();
-@FXML
-private Menu reversi = new Menu("Reversi");
-@FXML
-private MenuItem exit = new MenuItem("Exit");
-@FXML
-private MenuItem settings = new MenuItem("Settings");
+	@FXML
+	private Menu reversi = new Menu("Reversi");
+	@FXML
+	private MenuItem exit = new MenuItem("Exit");
+	@FXML
+	private MenuItem settings = new MenuItem("Settings");
 
-private SettingBox set = new SettingBox();
+	private SettingBox set = new SettingBox();
 
 
 
@@ -55,13 +55,13 @@ private SettingBox set = new SettingBox();
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		reversiBoard = new ReversiBoard(this);
-		
+
 		reversiBoard.setPrefWidth(400);
 		reversiBoard.setPrefHeight(400);
 		son.getChildren().add(0,reversiBoard);
 		//root.getChildren().add(son);
 		reversiBoard.draw();
-		
+
 		root.widthProperty().addListener((observable, oldValue, newValue) -> {
 			double boardNewWidth = newValue.doubleValue() - 200;
 			reversiBoard.setPrefWidth(boardNewWidth);
@@ -72,9 +72,10 @@ private SettingBox set = new SettingBox();
 			reversiBoard.setPrefHeight(newValue.doubleValue());
 			reversiBoard.draw();
 		});
-		
-		
+
+
 		exit.setOnAction(event -> {
+
 			String ans = ConfirmBox.Display("Exit", "Are you sure?");
 			if(ans.equals("yes")) {
 				Stage window =(Stage) root.getScene().getWindow();
@@ -85,12 +86,12 @@ private SettingBox set = new SettingBox();
 			try {
 				set.Display("Settings");
 			} catch (Exception e) {
-				
+
 			}
 		});
 
 	}
-	
+
 	public Label getxPoints() {
 		return xPoints;
 	}
@@ -105,8 +106,8 @@ private SettingBox set = new SettingBox();
 
 	@FXML
 	protected void clicked() {
-		
-		
+
+
 	}
 
 	public Label getCurrentPlayer() {

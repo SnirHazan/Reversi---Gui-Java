@@ -29,7 +29,7 @@ public class Point implements Comparable<Object> {
 	}
 	
 	public boolean valid_point() {
-		if (this.getX() < 0 || this.getX() > 7 || this.getY() < 0 || this.getY() > 7 ){
+		if (this.getX() < 0 || this.getX() > 21 || this.getY() < 0 || this.getY() > 21 ){
 			return false;
 		}
 		return true;

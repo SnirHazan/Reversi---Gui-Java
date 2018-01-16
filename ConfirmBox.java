@@ -9,44 +9,49 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ConfirmBox {
-	
+
 	static String answer;
 	Button yes;
 	Button no;
-	
+
 	static String Display(String title, String message){
-		
+
 		Stage win = new Stage();
 		win.setTitle(title);
 		win.initModality(Modality.APPLICATION_MODAL);
 		win.setMinWidth(300);
-		
+
 		Label l = new Label();
 		l.setText(message);
-		
+
 		Button yes = new Button("yes");
 		yes.setOnAction(e -> {
 			answer = yes.getText();
 			win.close();
 		});
-		
+
 		Button no = new Button("no");
 		no.setOnAction(e -> {
 			answer = no.getText();
 			win.close();
 		});
-		
+
+		win.setOnCloseRequest(e ->{
+			answer = no.getText();
+			win.close();
+		});
+
 		VBox lay = new VBox(10);
 		lay.getChildren().addAll(l,yes,no);
 		lay.setAlignment(Pos.CENTER);
-		
+
 		Scene scene = new Scene(lay,150,150);
 		win.setScene(scene);
 		win.showAndWait();
-		
+
 		return answer;
 
-		
+
 	}
 
 }

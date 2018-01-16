@@ -355,7 +355,6 @@ public class GameLogic {
 		if (flip_ctr > 0 && this.board.get_cell(i,j) == symbol) {
 			return new Point(i,j);
 		}
-		flip_ctr = 0;
 		return new Point(-1,-1);
 	}
 

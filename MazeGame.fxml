@@ -18,7 +18,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HBox fx:id="son" prefHeight="100.0" prefWidth="200.0">
+      <HBox fx:id="son" prefHeight="96.0" prefWidth="244.0">
          <children>
          	<VBox alignment="TOP_CENTER" prefHeight="116.0" prefWidth="263.0">
             <children>
@@ -43,7 +43,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="50.0" text="2" fx:id="xPoints">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="106.0" text="2" fx:id="xPoints">
                            <font>
                               <Font size="16.0" />
                            </font>
