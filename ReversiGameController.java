@@ -60,7 +60,7 @@ public class ReversiGameController implements Initializable {
 		reversiBoard.setPrefHeight(400);
 		son.getChildren().add(0,reversiBoard);
 		//root.getChildren().add(son);
-		reversiBoard.draw();
+		//reversiBoard.draw();
 
 		root.widthProperty().addListener((observable, oldValue, newValue) -> {
 			double boardNewWidth = newValue.doubleValue() - 200;
@@ -104,21 +104,25 @@ public class ReversiGameController implements Initializable {
 
 
 
-	@FXML
-	protected void clicked() {
-
-
-	}
-
 	public Label getCurrentPlayer() {
 		return currentPlayer;
 	}
+	
+	public char getCurrentPlayerSymbol(){
+		if(this.getCurrentPlayer().getText().equals("player1")){
+			return 'X';
+		}
+		return 'O';
+	}
 
 
 
-	@FXML
-	protected void released() {
-		currentPlayer.setText("TEST");
+	public void switchPlayer(){
+		if(this.getCurrentPlayerSymbol() == 'X'){
+			this.currentPlayer.setText("player2");
+		} else {
+			this.currentPlayer.setText("player1");
+		}
 	}
 
 }

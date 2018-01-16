@@ -32,10 +32,10 @@ public class AlertBox {
 		});
 		
 		VBox lay = new VBox(10);
-		lay.getChildren().addAll(exit,l);
+		lay.getChildren().addAll(l,exit);
 		lay.setAlignment(Pos.CENTER);
 		
-		Scene scene = new Scene(lay,200,200);
+		Scene scene = new Scene(lay,350,100);
 		win.setScene(scene);
 		
 		win.showAndWait();

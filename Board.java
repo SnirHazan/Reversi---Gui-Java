@@ -17,14 +17,11 @@ public class Board {
 			for(int j = 0; j< size; j++)
 				this.matrix[i][j] = ' ';
 		}
-		this.matrix[size/2 -1][size/2 -1] = 'O';
-		this.matrix[size/2][size/2 ] = 'O';
-		this.matrix[size/2][size/2 -1] = 'X';
-		this.matrix[size/2 -1][size/2 ] = 'X';
+	
 	}
 
 	public void set_matrix(int row, int col, char symbol) {
-		if (symbol != 'X' && symbol != 'O') {
+		if (symbol != 'X' && symbol != 'O' && symbol != 'Z') {
 			System.out.println("Unrecognized symbol.");
 			return;
 		} else {

@@ -18,10 +18,13 @@ public class GameLogic {
 	public GameLogic(){
 		this.should_stop = false;
 		this.players[0] = new Player("player1", 'X');
+		players[0].setColor(Color.BLACK);
 		this.players[1] = new Player("player2", 'O');
+		players[1].setColor(Color.WHITE);
 		this.board =new Board(8);
-		readFromFile();
 
+		this.firstPlayer = "player1";
+//		readFromFile();
 		this.init_start_board();
 	}
 
@@ -61,10 +64,12 @@ public class GameLogic {
 
 	}
 	private void init_start_board() {
+
 		this.board.set_matrix(this.board.getSize()/2 - 1,this.board.getSize()/2 - 1,'O');
 		this.board.set_matrix(this.board.getSize()/2,this.board.getSize()/2,'O');
 		this.board.set_matrix(this.board.getSize()/2,this.board.getSize()/2 - 1,'X');
 		this.board.set_matrix(this.board.getSize()/2 - 1,this.board.getSize()/2,'X');
+		
 	}
 
 	public boolean is_should_stop(){
@@ -87,20 +92,11 @@ public class GameLogic {
 		return this.board;
 	}
 
-	public int play_one_turn(char symbol,int row,int col) {
-		ArrayList<Point> start_points = new ArrayList<Point>();
-		ArrayList<Point> end_points = new ArrayList<Point>();
-		//System.out.println(p1.getName() + " - '" + p1.getSymbol() + "' turn");
-		this.find_options(symbol,start_points,end_points);
-		//order all points to print
-		if (start_points.isEmpty() == true) {
-			return 1;
-		}
+	public int play_one_turn(char symbol,ArrayList<Point> start_points,ArrayList<Point> end_points, int row,int col) {
 		Set <Point> s = new TreeSet<Point>();
 		for (Point point : start_points) {
 			s.add(point);
 		}
-		// check if need -1 -1###########################################################
 		if(is_point_in_set(new Point(row, col), s) == true) {
 			change_all_points(symbol,new Point(row,col),start_points,end_points);
 			//
@@ -110,7 +106,7 @@ public class GameLogic {
 		return -1;
 	}
 
-	private void find_options(char symbol, ArrayList<Point> start, ArrayList<Point> end) {
+	public void find_options(char symbol, ArrayList<Point> start, ArrayList<Point> end) {
 
 		int size = this.board.getSize();
 		for (int row = 0; row < size; row++) {
@@ -163,6 +159,7 @@ public class GameLogic {
 
 			}
 		}
+		
 	}
 	private Point check_right(int row, int col, char symbol) {
 		int i = row;
