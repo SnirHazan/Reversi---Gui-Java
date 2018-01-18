@@ -17,6 +17,7 @@ import javafx.stage.Stage;
  * this is the javafx board
  */
 public class ReversiBoard extends GridPane {
+	private Main m = new Main();
 	private GameLogic gl;
 	private static final char PLAYER_1 = 'X';
 	private static final char PLAYER_2 = 'O';
@@ -29,7 +30,7 @@ public class ReversiBoard extends GridPane {
 		this.gl = new GameLogic();
 		this.rgc = rgc;
 		rgc.getCurrentPlayer().setText(gl.firstPlayer);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MazeBoard.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ReversiBoard.fxml"));
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);
 		try {
@@ -82,7 +83,7 @@ public class ReversiBoard extends GridPane {
 			for (int j = 0; j < size; j++) {
 
 				Rectangle rect = new Rectangle(cellWidth, cellHeight, Color.web("0xfddb6e"));
-				rect.setStroke(Color.BLACK);
+				rect.setStroke(Color.BLACK.darker().darker());
 				if (gl.getBoard().get_cell(i, j) == PLAYER_1) {
 					this.add(rect, j, i);
 					this.addDisk(j , i , cellHeight, start_points, end_points, gl.get_player(1).getColor());
@@ -118,7 +119,8 @@ public class ReversiBoard extends GridPane {
 			message = "TIKO TIKO SHIVAION";
 		}
 		AlertBox.Display("End of Game", message);
-		Stage window =(Stage) this.getScene().getWindow();
+		Stage window =(Stage) this.rgc.getCurrentPlayer().getScene().getWindow();
+		this.m.start(new Stage());
 		window.close();
 
 	}
@@ -150,6 +152,7 @@ public class ReversiBoard extends GridPane {
 		GridPane.setValignment(up_circle, VPos.TOP);
 
 		this.add(up_circle, j, i);
+
 		if(playerColor.toString().equals("0x00000000")){
 			up_circle.setOnMouseEntered(e-> {
 				char symbol = rgc.getCurrentPlayerSymbol();

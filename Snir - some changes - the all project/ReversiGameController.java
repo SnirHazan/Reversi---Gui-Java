@@ -1,5 +1,9 @@
 package myapp;
 
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.*;
@@ -22,7 +26,7 @@ public class ReversiGameController implements Initializable {
 	@FXML
 	private Label oPoints = new Label("2");
 	@FXML
-	private Button btn = new Button();
+	private Button newGame = new Button();
 	@FXML
 	private ReversiBoard reversiBoard;
 	@FXML
@@ -30,11 +34,19 @@ public class ReversiGameController implements Initializable {
 	@FXML
 	private Menu reversi = new Menu("Reversi");
 	@FXML
+	private Menu info = new Menu("Info");
+	@FXML
 	private MenuItem exit = new MenuItem("Exit");
 	@FXML
 	private MenuItem settings = new MenuItem("Settings");
-
+	@FXML
+	private MenuItem creators = new MenuItem("Rules");
+	@FXML
+	Hyperlink link = new Hyperlink();
+	
 	private SettingBox set = new SettingBox();
+
+	private Main m = new Main();
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -63,13 +75,11 @@ public class ReversiGameController implements Initializable {
 			}
 		});
 		settings.setOnAction(event ->{
-			try {
-				set.Display("Settings");
-				Stage window =(Stage) root.getScene().getWindow();
-				window.close();
-			} catch (Exception e) {
-
-			}
+				set.Display("Settings");	
+		});
+		
+		creators.setOnAction(e->{
+			AlertBox.Display("Info", " Cohen & Hazan Ltd.");
 		});
 	}
 	/** 
@@ -107,6 +117,20 @@ public class ReversiGameController implements Initializable {
 			this.currentPlayer.setText("player2");
 		} else {
 			this.currentPlayer.setText("player1");
+		}
+	}
+	/**
+	 * This function called when the user click on the new game button.
+	 * the function create a new game with the new settings(if the user change it's).
+	 */
+	public void newGameClick(){
+		Stage window =(Stage) root.getScene().getWindow();
+		m.start(new Stage());
+		window.close();
+	}
+	public void rulesOpenBrowser() throws IOException, URISyntaxException{
+		if (Desktop.isDesktopSupported()) {
+		    Desktop.getDesktop().browse(new URI("https://en.wikipedia.org/wiki/Reversi"));
 		}
 	}
 }
