@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<VBox fx:id="root" prefHeight="296.0" prefWidth="252.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myapp.ReversiGameController">
+<VBox fx:id="root" prefHeight="296.0" prefWidth="279.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myapp.ReversiGameController">
    <children>
       <MenuBar fx:id="bar">
         <menus>
@@ -81,16 +81,20 @@
                   </HBox>
                   <Pane prefHeight="0.0" prefWidth="232.0">
                      <children>
-                        <Label layoutX="-20.0" layoutY="2.0" prefHeight="21.0" prefWidth="252.0" text="For more information and rules:" textOverrun="WORD_ELLIPSIS" underline="true">
+                        <Label layoutX="-6.0" layoutY="2.0" prefHeight="25.0" prefWidth="245.0" text="For more information and rules:" textOverrun="WORD_ELLIPSIS" underline="true">
                            <font>
-                              <Font name="System Bold" size="16.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                      </children>
                   </Pane>
                   <Pane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <Hyperlink fx:id="link" layoutX="-20.0" layoutY="25.0" onAction="#rulesOpenBrowser" prefHeight="29.0" prefWidth="252.0" text="https://en.wikipedia.org/wiki/Reversi" />
+                        <Hyperlink fx:id="link" layoutX="-9.0" layoutY="31.0" onAction="#rulesOpenBrowser" prefHeight="29.0" prefWidth="251.0" text="https://en.wikipedia.org/wiki/Reversi">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Hyperlink>
                      </children>
                   </Pane>
             </children>
