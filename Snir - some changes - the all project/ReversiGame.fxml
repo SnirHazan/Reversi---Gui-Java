@@ -72,7 +72,7 @@
                   </HBox>
                   <HBox prefHeight="77.0" prefWidth="224.0">
                      <children>
-                        <Button fx:id="newGame" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#newGameClick" prefHeight="34.0" prefWidth="94.0" text="New Game">
+                        <Button fx:id="newGame" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#newGameClick" prefHeight="34.0" prefWidth="94.0" text="New Game" textAlignment="CENTER">
                            <HBox.margin>
                               <Insets left="120.0" top="10.0" />
                            </HBox.margin>

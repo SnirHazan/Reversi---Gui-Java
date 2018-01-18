@@ -4,7 +4,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Modality;
@@ -46,7 +45,7 @@ public class AlertBox {
 		lay.getChildren().addAll(l,exit);
 		lay.setAlignment(Pos.CENTER);
 		
-		Scene scene = new Scene(lay,350,100);
+		Scene scene = new Scene(lay,350,150);
 		win.setScene(scene);
 		
 		win.showAndWait();
