@@ -1,0 +1,159 @@
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Thu Jan 18 14:18:33 2018 +0200
+
+    Change the button
+
+commit e9e11720db88d059032685306e2424f1d721d71b
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Thu Jan 18 02:41:31 2018 +0200
+
+    resize the window
+
+commit 86d098433f5e21ca7b9afded64b6a573b274333e
+Merge: 54a7026 ea31e66
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Thu Jan 18 02:32:52 2018 +0200
+
+    Merge branch 'master' of https://github.com/SnirHazan/Reversi---Gui-Java
+
+commit 54a7026e1927b0ff86ef4f7f76a325abf6d552d0
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Thu Jan 18 02:32:23 2018 +0200
+
+    some changes in the end of the game!
+
+commit ea31e663f6e6aea937f807be101d1518713dd1e4
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Wed Jan 17 12:05:28 2018 +0200
+
+    final zip
+
+commit a0f93d5892b85bacb2a5bb7e65b36f365ebd427d
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Wed Jan 17 01:02:45 2018 +0200
+
+    change the setting and some other features in the board draw
+
+commit c0d0b520d42054b5f3ac570c21d662a24a5ab0e4
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Tue Jan 16 22:06:42 2018 +0200
+
+    zip2
+
+commit 72bd6997ca643e51814a8a6e379fa5effed6cf47
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Tue Jan 16 22:01:40 2018 +0200
+
+    zip
+
+commit c3981ed6534f3448b1f118f347c7a694e0e7bc6d
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Tue Jan 16 20:20:54 2018 +0200
+
+    full priject
+
+commit ed66695b7d5b125da73e0d98a1962ee0306ee163
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Tue Jan 16 20:18:41 2018 +0200
+
+    log
+
+commit 34b6ce23db0f2c04ab70ac9cf099f755d5c6bbc1
+Merge: d5610f0 372f8bb
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Tue Jan 16 20:13:55 2018 +0200
+
+    Merge branch 'master' of https://github.com/SnirHazan/Reversi---Gui-Java
+
+commit d5610f03596bca0b3a5d0758109b0d4c7cd5f474
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Tue Jan 16 20:13:31 2018 +0200
+
+    More javadocs
+
+commit 372f8bb32a780fbd864befb068e6a697538beb5b
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Tue Jan 16 20:05:18 2018 +0200
+
+    generate javadoc
+
+commit 6ac05bab02b91f66c347224bde439bc46be3f8a4
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Tue Jan 16 19:30:16 2018 +0200
+
+    Delete file
+
+commit b4d1302062c5cdfde9ff096750873ee7090b17fe
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Tue Jan 16 19:28:24 2018 +0200
+
+    Add javadoc
+
+commit d2cd92327d01f0c0af33faf3ffa99b40af2f3dd4
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Tue Jan 16 19:27:24 2018 +0200
+
+    create java docs for Board.java and GameLogic.java
+
+commit 90a2c7001e157a51bebf6f49c2e0becf74e6107e
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Tue Jan 16 18:19:24 2018 +0200
+
+    project is fucking workinggit add -A
+
+commit 61dde07eb9e145cff57039fccf3b2b0162b587a3
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Tue Jan 16 17:41:46 2018 +0200
+
+    ddfds
+
+commit 1401fe4ef8fa6142e3fdf124a38fce526ae4e7e8
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Tue Jan 16 17:30:20 2018 +0200
+
+    working project - need to fix read/write from file
+
+commit 67a4b2d24bc0b2e95073eccf3e2e7a00a0ce979d
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Tue Jan 16 13:57:13 2018 +0200
+
+    Some changes in the project
+
+commit 854e19bdc95f2295563607375a41b0b450e65779
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Mon Jan 15 16:56:02 2018 +0200
+
+    Change the Settings
+
+commit ca288c98e385686121ca33b0a430e532acea5f5c
+Author: Orenmc <oren.c90@gmail.com>
+Date:   Mon Jan 15 16:43:30 2018 +0200
+
+    bla bla1
+
+commit bdf8f2c23ce501d4d2b53216eb7633715608ca0f
+Author: Snir Hazan <33998092+SnirHazan@users.noreply.github.com>
+Date:   Mon Jan 15 15:46:56 2018 +0200
+
+    Update define.txt
+
+    Change the configuration
+
+commit 91a842da1cdea49b8fc9d6bb1bf62eb29c78dbbf
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Mon Jan 15 15:44:37 2018 +0200
+
+    Reversi configuration text file
+
+commit e2d21918d4fc449b0f777b131e403375a1d43001
+Author: SnirHazan <snirhazan30@gmail.com>
+Date:   Mon Jan 15 13:46:45 2018 +0200
+
+    Add some Boxes
+
+commit 08abe56f5a891bf29fb55342044264c8f33c0e4b
+Author: Snir Hazan <33998092+SnirHazan@users.noreply.github.com>
+Date:   Mon Jan 15 13:17:40 2018 +0200
+
+    Initial commit
+
