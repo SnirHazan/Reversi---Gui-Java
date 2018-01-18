@@ -101,7 +101,7 @@ public class ReversiBoard extends GridPane {
 		}
 		//if end of game - alert box
 		if(gl.board_full() || endGameFlag){
-			endOfGame();
+			endOfGame(endGameFlag);
 		} else if(noMoveFlag==true){ // if just 1 player not have move
 			AlertBox.Display("Reversi", "No available move!");
 		}
@@ -109,14 +109,20 @@ public class ReversiBoard extends GridPane {
 	/**
 	 * prints message to screen - winning player is.
 	 */
-	private void endOfGame(){
+	private void endOfGame(boolean endgameflag){
 		int player1Point = Integer.parseInt(this.rgc.getxPoints().getText());
 		int player2Point = Integer.parseInt(this.rgc.getoPoints().getText());
-		String message = "THE WINNER IS PLAYER1";
+		String message = ""; 
+		
+		if(endgameflag) {
+			message = "No Available moves for both players\n";
+		}
 		if(player2Point > player1Point) {
-			message = "THE WINNER IS PLAYER2";
+			message = message + "THE WINNER IS PLAYER2";
 		} else if ( player1Point == player2Point) {
-			message = "TIKO TIKO SHIVAION";
+			message = message + "TIKO TIKO SHIVAION";
+		} else {
+			message = message + "THE WINNER IS PLAYER1";
 		}
 		AlertBox.Display("End of Game", message);
 		Stage window =(Stage) this.rgc.getCurrentPlayer().getScene().getWindow();

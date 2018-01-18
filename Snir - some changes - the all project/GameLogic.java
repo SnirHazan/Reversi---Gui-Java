@@ -78,7 +78,7 @@ public class GameLogic {
 	private void init_start_board() {
 		this.board.set_matrix(this.board.getSize()/2 - 1,this.board.getSize()/2 - 1,'O');
 		this.board.set_matrix(this.board.getSize()/2,this.board.getSize()/2,'O');
-		this.board.set_matrix(this.board.getSize()/2,this.board.getSize()/2 - 1,'X');
+		this.board.set_matrix(this.board.getSize()/2,this.board.getSize()/2 - 1,'O');
 		this.board.set_matrix(this.board.getSize()/2 - 1,this.board.getSize()/2,'X');
 	}
 
